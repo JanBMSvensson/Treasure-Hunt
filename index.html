@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>a Magical Treasure Hunt</title>
+        <link href="style.css" rel="stylesheet" />
+        <script src="code.js"></script>
+    </head>
+
+    <body conload="start()" style="background-color: #F4F4F4;">
+        <h1 style="text-align: center;">Treasure Hunt - Magic Edition</h1>
+
+        <div style="display: grid; grid-template-rows: auto auto;">
+            <div style="padding-left: 20px; display: grid; grid-template-columns: auto auto auto auto auto auto;">
+                <h3>Game mode:</h3>
+
+                <div class="game-mode-selector">
+                    <input onclick="game.SetGameMode(0);" id="gameMode1" type="radio" name="gameMode" checked /> 
+                    <label for="gameMode1">Try 1 of 3</label>
+                </div>
+
+                <div class="game-mode-selector">
+                    <input onclick="game.SetGameMode(1);" id="gameMode2" type="radio" name="gameMode" />
+                    <label for="gameMode2">Try 2 of 3</label>
+                </div>
+
+                <div class="game-mode-selector">
+                    <input onclick="game.SetGameMode(2);" id="gameMode3" type="radio" name="gameMode" />
+                    <label for="gameMode3">Try 1 of 2</label>
+                </div>
+
+                <div id="stateIndicator" class="game-mode-selector"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;">
+                <div></div>
+
+                <div id="Card1" class="card-container" onclick="game.onCardClick(0);">
+                    <div class="card" ontransitionend="game.onCardTransitionComplete(0);">
+                        <div class="card-back wait-for-image">
+                            <img class="cardImg" src="images\cardback.jpg" />
+                            <div class="api-info"></div>
+                        </div>
+                        <div class="card-front">
+                            <img class="cardImg" onload="game.onCardImageLoaded(0);" />
+                            <div class="card-info"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Card2" class="card-container" onclick="game.onCardClick(1);" Xstyle="border: 5px solid gray; border-radius: 15px;">
+                    <div class="card" ontransitionend="game.onCardTransitionComplete(1);">
+                        <div class="card-back wait-for-image">
+                            <img class="cardImg" src="images\cardback.jpg" />
+                            <div class="api-info"></div>
+                        </div>
+                        <div class="card-front">
+                            <img class="cardImg" onload="game.onCardImageLoaded(1);" />
+                            <div class="card-info"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Card3" class="card-container" onclick="game.onCardClick(2);">
+                    <div class="card" ontransitionend="game.onCardTransitionComplete(2);">
+                        <div class="card-back wait-for-image">
+                            <img class="cardImg" src="images\cardback.jpg"/>
+                            <div class="api-info"></div>
+                        </div>
+                        <div class="card-front">
+                            <img onload="game.onCardImageLoaded(2);" class="cardImg"/>
+                            <div class="card-info"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

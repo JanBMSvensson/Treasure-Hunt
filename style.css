@@ -1,0 +1,82 @@
+:root {
+    --Ocard-width: 488px;
+    --Ocard-height: 680px;
+    --card-width: 390px;
+    --card-height: 544px;
+}
+
+
+body {
+    color: black;
+    background-color: white;
+}
+
+.wait-for-image {
+    Xfilter:grayscale(1);
+    cursor: default;
+}
+
+.cardImg {
+    width: var(--card-width);
+    height: var(--card-height);
+    filter:drop-shadow(10px 10px 20px black);
+    image-rendering: optimizeQuality;
+}
+
+.card-container {
+    float: left;
+    position: relative;
+    margin: 20px;
+    padding:0px;
+    width: var(--card-width);
+    height: var(--card-height);
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card {
+    transition: 1.0s ease;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(0deg);
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.flip-it {
+    transform:rotateY(180deg);
+}
+
+.card-info {
+    font-size: 22pt;
+    text-align: center;
+    margin-top: 20px;
+}
+.api-info {
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.bad {
+    font-style: italic;
+}
+.good {
+    font-weight: bold;
+}
+
+.game-mode-selector {
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 20pt;
+}
